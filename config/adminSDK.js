@@ -1,10 +1,12 @@
 require('dotenv').config()
+const privateKeyBase64 = process.env.FIREBASE_PRIVATE_KEY
+const privateKey = Buffer.from(privateKeyBase64, 'base64').toString('utf-8')
 
 const adminConfig = {
   type: process.env.FIREBASE_TYPE,
   project_id: process.env.FIREBASE_PROJECT_ID,
   private_key_id: process.env.FIREBASE_PRIVATE_KEY_ID,
-  private_key: process.env.FIREBASE_PRIVATE_KEY,
+  private_key: privateKey,
   client_email: process.env.FIREBASE_CLIENT_EMAIL,
   client_id: process.env.FIREBASE_CLIENT_ID,
   auth_uri: process.env.FIREBASE_AUTH_URI,
