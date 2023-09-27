@@ -65,6 +65,8 @@ async function startLoaders() {
   ads = await initializeClientsFromDatabase()
   triviaGameQuestions = await initializeTriviaQuestionsFromDb()
   startPeriodicRoomCheck()
+  console.log('clients(ads)', ads)
+  console.log('avatars', avatars)
 }
 // Periodic Check
 function startPeriodicRoomCheck() {
