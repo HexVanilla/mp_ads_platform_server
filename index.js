@@ -21,9 +21,10 @@ const {
   initializeTriviaQuestionsFromDb,
 } = require('./Loaders')
 
+const path = require('path')
+
 appExpress.use(express.static(path.join(__dirname, 'dist')))
 
-const path = require('path')
 appExpress.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
 })
