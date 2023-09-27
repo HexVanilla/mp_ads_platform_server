@@ -1,0 +1,1 @@
+.app-container{position:absolute;top:0;right:0;background-color:#fff;width:100vw}.app{height:100%;display:flex;justify-content:center;align-items:center}.header{height:10rem}@media screen and (max-width: 425px){.header{height:15rem}}@media screen and (max-width: 375px){.header{height:15rem}}

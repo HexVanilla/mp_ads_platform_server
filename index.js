@@ -21,9 +21,16 @@ const {
   initializeTriviaQuestionsFromDb,
 } = require('./Loaders')
 
+appExpress.use(express.static('dist'))
+
 const server = appExpress.listen(PORT, function () {
   console.log('server running on port 3001')
 })
+const path = require('path')
+appExpress.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
+})
+
 console.log('ORIGIN', ORIGIN)
 const io = socket(server, {
   cors: { credentials: true, methods: ['GET', 'POST'], origin: '*' },
