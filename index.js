@@ -91,6 +91,7 @@ io.on('connection', async (socket) => {
   })
   //####################### ON LANDING ###########################
   socket.on('onLanding', async (data, ackCallback) => {
+    console.log('landingData', data)
     ads[data]
       ? ackCallback({ res: true, data: ads[data] })
       : ackCallback({ res: false, data: ads['default'] })
