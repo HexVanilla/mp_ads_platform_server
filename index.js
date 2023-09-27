@@ -26,7 +26,7 @@ const server = appExpress.listen(PORT, function () {
 })
 console.log('ORIGIN', ORIGIN)
 const io = socket(server, {
-  cors: { credentials: true, methods: ['GET', 'POST'], origin: ORIGIN },
+  cors: { credentials: true, methods: ['GET', 'POST'], origin: '*' },
 })
 
 //Local Rooms
