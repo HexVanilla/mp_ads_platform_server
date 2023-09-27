@@ -21,14 +21,15 @@ const {
   initializeTriviaQuestionsFromDb,
 } = require('./Loaders')
 
-appExpress.use(express.static('dist'))
+appExpress.use(express.static(path.join(__dirname, 'dist')))
+
+const path = require('path')
+appExpress.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
+})
 
 const server = appExpress.listen(PORT, function () {
   console.log('server running on port 3001')
-})
-const path = require('path')
-appExpress.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
 })
 
 console.log('ORIGIN', ORIGIN)
